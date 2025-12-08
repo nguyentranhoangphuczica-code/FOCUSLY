@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="vi" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOCUSLY - Ứng dụng giúp sinh vi����n giảm nghiện smartphone</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .phone-mockup {
+      border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      border: 8px solid #1a1a1a;
+      background: white;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .app-store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .screen-mockup {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      background: white;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="h-full w-full overflow-auto"><!-- Header -->
+   <header class="fixed top-0 left-0 right-0 z-50 shadow-sm" style="background: white;">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+     <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+       <svg width="40" height="40" viewbox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#667eea" /> <rect x="12" y="8" width="16" height="24" rx="2" fill="white" /> <rect x="18" y="14" width="4" height="2" rx="1" fill="#667eea" /> <rect x="18" y="18" width="4" height="2" rx="1" fill="#667eea" />
+       </svg><span id="logo-text" class="text-2xl font-bold" style="color: #667eea;">FOCUSLY</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8"><a href="#features" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Tính năng</a> <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Cách hoạt động</a> <a href="#for-students" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Dành cho sinh viên</a> <a href="#download" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Tải ứng dụng</a>
+      </nav><a href="#download" id="header-cta" class="app-store-btn text-white" style="background: #ff6b35;"> Tải FOCUSLY ngay </a>
+     </div>
+    </div>
+   </header><!-- Hero Section -->
+   <section class="pt-32 pb-20 px-6" style="background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 50%, #e0e7ff 100%);">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+       <h1 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6" style="color: #1e293b; line-height: 1.2;">Bớt lướt điện thoại, tập trung sống thật</h1>
+       <p id="hero-subtitle" class="text-xl mb-8" style="color: #475569;">FOCUSLY giúp sinh viên tập theo dõi – kiểm soát – giảm thời gian dùng smartphone.</p>
+       <div class="flex flex-wrap gap-4"><a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="app-store-btn text-white" style="background: #667eea;">
+         <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+         </svg> Tải trên Google Play </a> <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="app-store-btn text-white" style="background: #1e293b;">
+         <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+         </svg> Tải trên App Store </a>
+       </div>
+      </div>
+      <div class="relative">
+       <div class="flex gap-6 justify-center items-center flex-wrap"><!-- Phone Mockup 1 - Dashboard -->
+        <div class="phone-mockup w-64 p-4">
+         <div class="mb-3 flex items-center justify-center gap-2">
+          <div class="w-20 h-1 rounded-full" style="background: #e2e8f0;"></div>
+         </div>
+         <div class="space-y-3">
+          <div class="text-center mb-4">
+           <div class="text-xs" style="color: #64748b;">
+            Thứ Hai, 18 Tháng 12
+           </div>
+           <div class="text-2xl font-bold mt-1" style="color: #1e293b;">
+            Dashboard
+           </div>
+          </div>
+          <div class="p-4 rounded-xl" style="background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);">
+           <div class="text-sm font-semibold mb-2" style="color: #1e40af;">
+            ⏱️ Thời gian hôm nay
+           </div>
+           <div class="text-4xl font-bold mb-1" style="color: #667eea;">
+            2h 15m
+           </div>
+           <div class="text-xs mb-3" style="color: #64748b;">
+            Mục tiêu: 5h/ngày
+           </div>
+           <div class="h-3 rounded-full" style="background: #e0e7ff;">
+            <div class="h-3 rounded-full relative" style="background: #667eea; width: 45%;">
+             <div class="absolute right-0 top-0 w-3 h-3 rounded-full" style="background: #667eea; box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);"></div>
+            </div>
+           </div>
+           <div class="flex justify-between mt-2 text-xs" style="color: #64748b;"><span>Còn 2h 45m</span> <span>45%</span>
+           </div>
+          </div>
+          <div class="p-3 rounded-lg flex items-center justify-between" style="background: #fef3c7;">
+           <div class="flex items-center gap-2"><span class="text-lg">🔥</span>
+            <div>
+             <div class="text-xs font-semibold" style="color: #92400e;">
+              Focus Mode
+             </div>
+             <div class="text-xs" style="color: #92400e; opacity: 0.7;">
+              Sẵn sàng
+             </div>
+            </div>
+           </div>
+           <div class="w-10 h-6 rounded-full relative" style="background: #10b981;">
+            <div class="w-4 h-4 rounded-full absolute right-1 top-1" style="background: white;"></div>
+           </div>
+          </div>
+          <div class="space-y-2">
+           <div class="text-xs font-semibold" style="color: #64748b;">
+            Top ứng dụng sử dụng
+           </div>
+           <div class="flex items-center gap-2 p-2 rounded-lg" style="background: #f8fafc;">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><span class="text-white text-lg">📱</span>
+            </div>
+            <div class="flex-1">
+             <div class="flex items-center justify-between mb-1"><span class="text-sm font-medium">TikTok</span> <span class="text-xs font-semibold" style="color: #667eea;">45m</span>
+             </div>
+             <div class="h-1.5 rounded-full" style="background: #e2e8f0;">
+              <div class="h-1.5 rounded-full" style="background: #667eea; width: 60%;"></div>
+             </div>
+            </div>
+           </div>
+           <div class="flex items-center gap-2 p-2 rounded-lg" style="background: #f8fafc;">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);"><span class="text-white text-lg">💬</span>
+            </div>
+            <div class="flex-1">
+             <div class="flex items-center justify-between mb-1"><span class="text-sm font-medium">Instagram</span> <span class="text-xs font-semibold" style="color: #10b981;">30m</span>
+             </div>
+             <div class="h-1.5 rounded-full" style="background: #e2e8f0;">
+              <div class="h-1.5 rounded-full" style="background: #10b981; width: 40%;"></div>
+             </div>
+            </div>
+           </div>
+           <div class="flex items-center gap-2 p-2 rounded-lg" style="background: #f8fafc;">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);"><span class="text-white text-lg">🎮</span>
+            </div>
+            <div class="flex-1">
+             <div class="flex items-center justify-between mb-1"><span class="text-sm font-medium">Game</span> <span class="text-xs font-semibold" style="color: #f59e0b;">28m</span>
+             </div>
+             <div class="h-1.5 rounded-full" style="background: #e2e8f0;">
+              <div class="h-1.5 rounded-full" style="background: #f59e0b; width: 35%;"></div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div><!-- Phone Mockup 2 - Focus Mode -->
+        <div class="phone-mockup w-64 p-4">
+         <div class="mb-3 flex items-center justify-center gap-2">
+          <div class="w-20 h-1 rounded-full" style="background: #e2e8f0;"></div>
+         </div>
+         <div class="text-center mb-6">
+          <div class="inline-block px-3 py-1 rounded-full mb-4" style="background: #fef3c7;"><span class="text-xs font-semibold" style="color: #92400e;">🔥 Đang hoạt động</span>
+          </div>
+          <div class="text-2xl font-bold mb-2" style="color: #667eea;">
+           Chế độ Tập trung
+          </div>
+          <div class="text-sm mb-6" style="color: #64748b;">
+           Pomodoro Timer
+          </div>
+          <div class="relative w-48 h-48 mx-auto mb-6">
+           <svg class="w-full h-full transform -rotate-90"><circle cx="96" cy="96" r="88" fill="none" stroke="#f1f5f9" stroke-width="12" /> <circle cx="96" cy="96" r="88" fill="none" stroke="#667eea" stroke-width="12" stroke-dasharray="553" stroke-dashoffset="138" stroke-linecap="round" style="filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.4));" />
+           </svg>
+           <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center">
+             <div class="text-5xl font-bold mb-1" style="color: #667eea;">
+              25:00
+             </div>
+             <div class="text-xs font-medium" style="color: #64748b;">
+              phút còn lại
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="flex gap-3 justify-center mb-6"><button class="w-14 h-14 rounded-full flex items-center justify-center" style="background: #667eea; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="white"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+            </svg></button> <button class="w-14 h-14 rounded-full flex items-center justify-center" style="background: #f1f5f9;">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="#64748b"><path d="M6,6H18V18H6V6M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4C2.89,22 2,21.1 2,20V4A2,2 0 0,1 4,2Z" />
+            </svg></button>
+          </div>
+         </div>
+         <div class="space-y-2">
+          <div class="text-xs font-semibold mb-2" style="color: #64748b;">
+           🔒 Ứng dụng bị khóa (5)
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg" style="background: #fee2e2;">
+           <div class="flex items-center gap-2"><span class="text-base">📱</span> <span class="text-sm font-medium">TikTok</span>
+           </div><span class="text-xs font-semibold px-2 py-1 rounded" style="color: #991b1b; background: #fecaca;">Khóa</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg" style="background: #fee2e2;">
+           <div class="flex items-center gap-2"><span class="text-base">📘</span> <span class="text-sm font-medium">Facebook</span>
+           </div><span class="text-xs font-semibold px-2 py-1 rounded" style="color: #991b1b; background: #fecaca;">Khóa</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg" style="background: #fee2e2;">
+           <div class="flex items-center gap-2"><span class="text-base">📷</span> <span class="text-sm font-medium">Instagram</span>
+           </div><span class="text-xs font-semibold px-2 py-1 rounded" style="color: #991b1b; background: #fecaca;">Khóa</span>
+          </div>
+         </div>
+        </div><!-- Phone Mockup 3 - Stats Preview -->
+        <div class="phone-mockup w-64 p-4">
+         <div class="mb-3 flex items-center justify-center gap-2">
+          <div class="w-20 h-1 rounded-full" style="background: #e2e8f0;"></div>
+         </div>
+         <div class="space-y-3">
+          <div class="text-center mb-4">
+           <div class="text-2xl font-bold" style="color: #1e293b;">
+            Thống kê tuần
+           </div>
+           <div class="text-xs mt-1" style="color: #64748b;">
+            11 - 17 Tháng 12
+           </div>
+          </div>
+          <div class="p-4 rounded-xl" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
+           <div class="flex items-center justify-between mb-2"><span class="text-sm font-semibold" style="color: #065f46;">📊 Trung bình</span> <span class="text-xs px-2 py-1 rounded-full" style="background: #10b981; color: white;">-25%</span>
+           </div>
+           <div class="text-4xl font-bold" style="color: #10b981;">
+            3h 12m
+           </div>
+           <div class="text-xs mt-1" style="color: #065f46;">
+            mỗi ngày
+           </div>
+          </div>
+          <div class="space-y-2">
+           <div class="flex items-center justify-between text-xs" style="color: #64748b;"><span>Biểu đồ 7 ngày</span> <span>Giờ</span>
+           </div>
+           <svg viewbox="0 0 200 100" class="w-full"><defs>
+             <lineargradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+              <stop offset="100%" style="stop-color:#667eea;stop-opacity:0" />
+             </lineargradient>
+            </defs> <path d="M 10 70 L 40 60 L 70 65 L 100 40 L 130 45 L 160 30 L 190 35" fill="none" stroke="#667eea" stroke-width="3" stroke-linecap="round" /> <path d="M 10 70 L 40 60 L 70 65 L 100 40 L 130 45 L 160 30 L 190 35 L 190 100 L 10 100 Z" fill="url(#gradient1)" /> <circle cx="10" cy="70" r="4" fill="#667eea" /> <circle cx="40" cy="60" r="4" fill="#667eea" /> <circle cx="70" cy="65" r="4" fill="#667eea" /> <circle cx="100" cy="40" r="4" fill="#667eea" /> <circle cx="130" cy="45" r="4" fill="#667eea" /> <circle cx="160" cy="30" r="4" fill="#667eea" /> <circle cx="190" cy="35" r="4" fill="#10b981" /> <text x="10" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T2
+            </text> <text x="40" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T3
+            </text> <text x="70" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T4
+            </text> <text x="100" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T5
+            </text> <text x="130" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T6
+            </text> <text x="160" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             T7
+            </text> <text x="190" y="95" font-size="8" fill="#94a3b8" text-anchor="middle">
+             CN
+            </text>
+           </svg>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+           <div class="p-3 rounded-lg" style="background: #f0f9ff;">
+            <div class="text-xs mb-1" style="color: #0369a1;">
+             Số lần mở
+            </div>
+            <div class="text-2xl font-bold" style="color: #0284c7;">
+             142
+            </div>
+           </div>
+           <div class="p-3 rounded-lg" style="background: #fef3c7;">
+            <div class="text-xs mb-1" style="color: #92400e;">
+             Điểm số
+            </div>
+            <div class="text-2xl font-bold" style="color: #f59e0b;">
+             890
+            </div>
+           </div>
+           <div class="p-3 rounded-lg" style="background: #ffe4e6;">
+            <div class="text-xs mb-1" style="color: #881337;">
+             Focus time
+            </div>
+            <div class="text-2xl font-bold" style="color: #ff6b35;">
+             12h
+            </div>
+           </div>
+           <div class="p-3 rounded-lg" style="background: #f3e8ff;">
+            <div class="text-xs mb-1" style="color: #6b21a8;">
+             Streak
+            </div>
+            <div class="text-2xl font-bold" style="color: #8b5cf6;">
+             7🔥
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Features Section -->
+   <section id="features" class="py-20 px-6" style="background: white;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4" style="color: #1e293b;">FOCUSLY làm được gì?</h2>
+      <p class="text-xl" style="color: #64748b;">Công cụ toàn diện giúp bạn kiểm soát thời gian sử dụng điện thoại</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="feature-card p-8 rounded-2xl" style="background: #f0f9ff;">
+       <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: #0ea5e9;">
+        <svg width="32" height="32" viewbox="0 0 24 24" fill="white"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Theo dõi thời gian</h3>
+       <p style="color: #64748b;">Theo dõi thời gian dùng điện thoại &amp; từng ứng dụng chi tiết theo ngày, tuần, tháng</p>
+      </div>
+      <div class="feature-card p-8 rounded-2xl" style="background: #f0fdf4;">
+       <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: #10b981;">
+        <svg width="32" height="32" viewbox="0 0 24 24" fill="white"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Đặt giới hạn</h3>
+       <p style="color: #64748b;">Đặt giới hạn &amp; khóa mềm app gây nghiện như Facebook, TikTok, game khi vượt quá</p>
+      </div>
+      <div class="feature-card p-8 rounded-2xl" style="background: #fef3c7;">
+       <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: #f59e0b;">
+        <svg width="32" height="32" viewbox="0 0 24 24" fill="white"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Chế độ Tập trung</h3>
+       <p style="color: #64748b;">Bật Focus Mode trong giờ học, ôn thi để tránh phân tâm và tăng hiệu suất học tập</p>
+      </div>
+      <div class="feature-card p-8 rounded-2xl" style="background: #ffe4e6;">
+       <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: #ff6b35;">
+        <svg width="32" height="32" viewbox="0 0 24 24" fill="white"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Thử thách &amp; thưởng</h3>
+       <p style="color: #64748b;">Tham gia thử thách, nhận điểm thưởng và huy hiệu khi đạt mục tiêu giảm dùng điện thoại</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- How It Works Section -->
+   <section id="how-it-works" class="py-20 px-6" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4" style="color: #1e293b;">Cách hoạt động</h2>
+      <p class="text-xl" style="color: #64748b;">Chỉ 3 bước đơn giản để bắt đầu</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-12">
+      <div class="text-center">
+       <div class="step-number text-white mb-4" style="background: #667eea;">
+        1
+       </div>
+       <div class="p-8 rounded-2xl h-full" style="background: white;">
+        <svg class="w-24 h-24 mx-auto mb-6" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" fill="#e0f2fe" /> <rect x="30" y="20" width="40" height="60" rx="5" fill="#667eea" /> <rect x="35" y="25" width="30" height="50" rx="2" fill="white" /> <path d="M 45 40 L 55 50 L 45 60" stroke="#667eea" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Cài đặt &amp; cấp quyền</h3>
+        <p style="color: #64748b;">Tải ứng dụng và cấp quyền theo dõi sử dụng để FOCUSLY có thể thu thập dữ liệu</p>
+       </div>
+      </div>
+      <div class="text-center">
+       <div class="step-number text-white mb-4" style="background: #10b981;">
+        2
+       </div>
+       <div class="p-8 rounded-2xl h-full" style="background: white;">
+        <svg class="w-24 h-24 mx-auto mb-6" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" fill="#f0fdf4" /> <circle cx="50" cy="50" r="30" fill="#10b981" /> <path d="M 50 30 L 50 50 L 65 50" stroke="white" stroke-width="4" stroke-linecap="round" />
+        </svg>
+        <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Đặt mục tiêu</h3>
+        <p style="color: #64748b;">Thiết lập mục tiêu thời gian sử dụng và chọn khung giờ Focus phù hợp với lịch học</p>
+       </div>
+      </div>
+      <div class="text-center">
+       <div class="step-number text-white mb-4" style="background: #ff6b35;">
+        3
+       </div>
+       <div class="p-8 rounded-2xl h-full" style="background: white;">
+        <svg class="w-24 h-24 mx-auto mb-6" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" fill="#fef3c7" /> <path d="M 30 50 L 45 65 L 70 35" stroke="#ff6b35" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" /> <circle cx="75" cy="25" r="8" fill="#ff6b35" /> <text x="75" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
+          +
+         </text>
+        </svg>
+        <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Nhận thưởng</h3>
+        <p style="color: #64748b;">Nhận cảnh báo khi sắp vượt giới hạn và điểm thưởng khi hoàn thành mục tiêu</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- For Students Section -->
+   <section id="for-students" class="py-20 px-6" style="background: white;">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+       <h2 class="text-4xl font-bold mb-6" style="color: #1e293b;">Dành riêng cho sinh viên TP.HCM</h2>
+       <div class="p-6 rounded-2xl mb-6" style="background: #fef3c7; border-left: 4px solid #ff6b35;">
+        <p class="font-semibold text-lg" style="color: #92400e;">⭐ Ưu tiên sinh viên tại trường Đại học, Cao đẳng tại TP.HCM</p>
+       </div>
+       <ul class="space-y-4 mb-8">
+        <li class="flex items-start gap-3">
+         <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: #dbeafe;">
+          <svg width="16" height="16" viewbox="0 0 24 24" fill="#667eea"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </svg>
+         </div><span class="text-lg" style="color: #475569;">Cải thiện tập trung học tập và năng suất làm bài tập</span></li>
+        <li class="flex items-start gap-3">
+         <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: #dbeafe;">
+          <svg width="16" height="16" viewbox="0 0 24 24" fill="#667eea"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </svg>
+         </div><span class="text-lg" style="color: #475569;">Giấc ngủ tốt hơn nhờ giảm lướt điện thoại trước khi ngủ</span></li>
+        <li class="flex items-start gap-3">
+         <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: #dbeafe;">
+          <svg width="16" height="16" viewbox="0 0 24 24" fill="#667eea"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </svg>
+         </div><span class="text-lg" style="color: #475569;">Giảm stress, lo âu và hội chứng FOMO từ mạng xã hội</span></li>
+        <li class="flex items-start gap-3">
+         <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: #dbeafe;">
+          <svg width="16" height="16" viewbox="0 0 24 24" fill="#667eea"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </svg>
+         </div><span class="text-lg" style="color: #475569;">Nhiều thời gian hơn cho hoạt động ngoài trời và bạn bè</span></li>
+       </ul>
+      </div>
+      <div class="relative">
+       <svg viewbox="0 0 400 300" fill="none"><!-- Background --> <rect width="400" height="300" fill="#f0f9ff" /> <!-- Table --> <ellipse cx="200" cy="220" rx="180" ry="40" fill="#cbd5e1" /> <rect x="40" y="140" width="320" height="80" rx="10" fill="#94a3b8" /> <!-- Phones on table (face down) --> <rect x="80" y="160" width="50" height="30" rx="5" fill="#334155" /> <rect x="175" y="160" width="50" height="30" rx="5" fill="#334155" /> <rect x="270" y="160" width="50" height="30" rx="5" fill="#334155" /> <!-- Students --> <!-- Student 1 --> <circle cx="100" cy="100" r="25" fill="#fbbf24" /> <rect x="85" y="125" width="30" height="40" rx="5" fill="#667eea" /> <path d="M 95 90 Q 100 95 105 90" stroke="#1e293b" stroke-width="2" fill="none" /> <!-- Student 2 --> <circle cx="200" cy="95" r="25" fill="#f59e0b" /> <rect x="185" y="120" width="30" height="40" rx="5" fill="#10b981" /> <path d="M 195 85 Q 200 90 205 85" stroke="#1e293b" stroke-width="2" fill="none" /> <!-- Student 3 --> <circle cx="300" cy="100" r="25" fill="#ef4444" /> <rect x="285" y="125" width="30" height="40" rx="5" fill="#8b5cf6" /> <path d="M 295 90 Q 300 95 305 90" stroke="#1e293b" stroke-width="2" fill="none" /> <!-- Books and study materials --> <rect x="140" y="165" width="25" height="20" rx="2" fill="#fef3c7" /> <rect x="235" y="168" width="20" height="15" rx="2" fill="#dbeafe" /> <!-- Focus lines --> <path d="M 75 110 L 50 125" stroke="#667eea" stroke-width="2" stroke-dasharray="4" /> <path d="M 125 110 L 150 125" stroke="#667eea" stroke-width="2" stroke-dasharray="4" /> <path d="M 325 110 L 350 125" stroke="#10b981" stroke-width="2" stroke-dasharray="4" />
+       </svg>
+      </div>
+     </div>
+    </div>
+   </section><!-- App Screens Gallery -->
+   <section id="gallery" class="py-20 px-6" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4" style="color: #1e293b;">Giao diện ứng dụng</h2>
+      <p class="text-xl" style="color: #64748b;">Trải nghiệm trực quan và dễ sử dụng</p>
+     </div>
+     <div class="grid grid-cols-2 md:grid-cols-5 gap-6"><!-- Screen 1: Welcome -->
+      <div class="screen-mockup">
+       <div class="p-6 h-96 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <svg width="80" height="80" viewbox="0 0 80 80" class="mb-6"><rect width="80" height="80" rx="20" fill="white" opacity="0.2" /> <rect x="20" y="15" width="40" height="50" rx="4" fill="white" /> <rect x="35" y="25" width="10" height="4" rx="2" fill="#667eea" /> <rect x="35" y="35" width="10" height="4" rx="2" fill="#667eea" />
+        </svg>
+        <div class="text-center">
+         <h3 class="text-2xl font-bold text-white mb-2">Chào mừng</h3>
+         <p class="text-white opacity-90 text-sm">đến với FOCUSLY</p>
+        </div>
+        <div class="mt-8 space-y-3 w-full px-4">
+         <div class="h-12 rounded-xl flex items-center justify-center" style="background: white;"><span class="font-semibold" style="color: #667eea;">Đăng nhập</span>
+         </div>
+         <div class="h-12 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.2);"><span class="font-semibold text-white">Đăng ký</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Screen 2: Dashboard -->
+      <div class="screen-mockup">
+       <div class="p-6 h-96" style="background: white;">
+        <div class="flex items-center justify-between mb-6">
+         <h3 class="font-bold" style="color: #1e293b;">Hôm nay</h3><span class="text-xs" style="color: #64748b;">17/12/2024</span>
+        </div>
+        <div class="p-4 rounded-xl mb-4" style="background: #dbeafe;">
+         <div class="text-xs mb-2" style="color: #1e40af;">
+          Tổng thời gian
+         </div>
+         <div class="text-3xl font-bold mb-3" style="color: #667eea;">
+          2h 15m
+         </div>
+         <div class="h-2 rounded-full" style="background: #e0e7ff;">
+          <div class="h-2 rounded-full" style="background: #667eea; width: 45%;"></div>
+         </div>
+         <div class="text-xs mt-2" style="color: #64748b;">
+          Mục tiêu: 5h/ngày
+         </div>
+        </div>
+        <div class="space-y-2">
+         <div class="flex items-center justify-between p-3 rounded-lg" style="background: #f8fafc;">
+          <div class="flex items-center gap-2">
+           <div class="w-8 h-8 rounded-lg" style="background: #667eea;"></div>
+           <div>
+            <div class="text-sm font-medium">
+             TikTok
+            </div>
+            <div class="text-xs" style="color: #64748b;">
+             45m
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center justify-between p-3 rounded-lg" style="background: #f8fafc;">
+          <div class="flex items-center gap-2">
+           <div class="w-8 h-8 rounded-lg" style="background: #10b981;"></div>
+           <div>
+            <div class="text-sm font-medium">
+             Instagram
+            </div>
+            <div class="text-xs" style="color: #64748b;">
+             30m
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Screen 3: Focus Mode -->
+      <div class="screen-mockup">
+       <div class="p-6 h-96 flex flex-col" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+        <h3 class="text-center font-bold mb-6" style="color: #92400e;">Chế độ Tập trung</h3>
+        <div class="flex-1 flex items-center justify-center">
+         <div class="relative">
+          <svg width="160" height="160" viewbox="0 0 160 160"><circle cx="80" cy="80" r="70" fill="none" stroke="#fde68a" stroke-width="8" /> <circle cx="80" cy="80" r="70" fill="none" stroke="#ff6b35" stroke-width="8" stroke-dasharray="440" stroke-dashoffset="110" transform="rotate(-90 80 80)" />
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+           <div class="text-center">
+            <div class="text-4xl font-bold" style="color: #92400e;">
+             25:00
+            </div>
+            <div class="text-xs mt-1" style="color: #92400e;">
+             còn lại
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-2">
+         <div class="p-2 rounded-lg flex items-center justify-between" style="background: rgba(255,255,255,0.5);"><span class="text-sm">📱 TikTok</span> <span class="text-xs font-medium" style="color: #991b1b;">Khóa</span>
+         </div>
+         <div class="p-2 rounded-lg flex items-center justify-between" style="background: rgba(255,255,255,0.5);"><span class="text-sm">📘 Facebook</span> <span class="text-xs font-medium" style="color: #991b1b;">Khóa</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Screen 4: Challenges -->
+      <div class="screen-mockup">
+       <div class="p-6 h-96" style="background: white;">
+        <h3 class="font-bold mb-4" style="color: #1e293b;">Thử thách &amp; Bảng xếp hạng</h3>
+        <div class="p-4 rounded-xl mb-4" style="background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);">
+         <div class="flex items-center justify-between mb-2"><span class="text-sm font-semibold" style="color: #881337;">🏆 Thử thách tuần này</span> <span class="text-xs" style="color: #881337;">3/7 ngày</span>
+         </div>
+         <div class="h-2 rounded-full" style="background: rgba(255,255,255,0.5);">
+          <div class="h-2 rounded-full" style="background: #ff6b35; width: 43%;"></div>
+         </div>
+         <p class="text-xs mt-2" style="color: #881337;">Giảm 20% thời gian so với tuần trước</p>
+        </div>
+        <div class="space-y-2">
+         <div class="flex items-center gap-3 p-2 rounded-lg" style="background: #fef3c7;">
+          <div class="text-2xl">
+           🥇
+          </div>
+          <div class="flex-1">
+           <div class="text-sm font-medium">
+            Bạn
+           </div>
+           <div class="text-xs" style="color: #64748b;">
+            120 điểm
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center gap-3 p-2 rounded-lg" style="background: #f8fafc;">
+          <div class="text-2xl">
+           🥈
+          </div>
+          <div class="flex-1">
+           <div class="text-sm font-medium">
+            Nguyễn A
+           </div>
+           <div class="text-xs" style="color: #64748b;">
+            95 điểm
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center gap-3 p-2 rounded-lg" style="background: #f8fafc;">
+          <div class="text-2xl">
+           🥉
+          </div>
+          <div class="flex-1">
+           <div class="text-sm font-medium">
+            Trần B
+           </div>
+           <div class="text-xs" style="color: #64748b;">
+            87 điểm
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mt-4 flex gap-2">
+         <div class="flex-1 p-2 rounded-lg text-center" style="background: #f0f9ff;">
+          <div class="text-lg">
+           🏅
+          </div>
+          <div class="text-xs mt-1" style="color: #0369a1;">
+           7 ngày
+          </div>
+         </div>
+         <div class="flex-1 p-2 rounded-lg text-center" style="background: #f0fdf4;">
+          <div class="text-lg">
+           ⭐
+          </div>
+          <div class="text-xs mt-1" style="color: #065f46;">
+           30 ngày
+          </div>
+         </div>
+         <div class="flex-1 p-2 rounded-lg text-center" style="background: #fef3c7;">
+          <div class="text-lg">
+           🔥
+          </div>
+          <div class="text-xs mt-1" style="color: #92400e;">
+           Streak
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Screen 5: Statistics -->
+      <div class="screen-mockup">
+       <div class="p-6 h-96" style="background: white;">
+        <div class="flex items-center justify-between mb-6">
+         <h3 class="font-bold" style="color: #1e293b;">Thống kê</h3><select class="text-xs px-2 py-1 rounded" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0;"> <option>Tuần này</option> <option>Tháng này</option> </select>
+        </div>
+        <div class="mb-6">
+         <svg viewbox="0 0 200 100" class="w-full"><path d="M 10 80 L 40 65 L 70 70 L 100 45 L 130 55 L 160 30 L 190 40" fill="none" stroke="#667eea" stroke-width="3" stroke-linecap="round" /> <path d="M 10 80 L 40 65 L 70 70 L 100 45 L 130 55 L 160 30 L 190 40 L 190 90 L 10 90 Z" fill="#667eea" opacity="0.1" />
+         </svg>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+         <div class="p-3 rounded-lg" style="background: #f0f9ff;">
+          <div class="text-2xl font-bold" style="color: #0369a1;">
+           3.2h
+          </div>
+          <div class="text-xs" style="color: #64748b;">
+           TB mỗi ngày
+          </div>
+         </div>
+         <div class="p-3 rounded-lg" style="background: #f0fdf4;">
+          <div class="text-2xl font-bold" style="color: #065f46;">
+           -25%
+          </div>
+          <div class="text-xs" style="color: #64748b;">
+           So với tuần trước
+          </div>
+         </div>
+         <div class="p-3 rounded-lg" style="background: #fef3c7;">
+          <div class="text-2xl font-bold" style="color: #92400e;">
+           12
+          </div>
+          <div class="text-xs" style="color: #64748b;">
+           Lần mở khóa
+          </div>
+         </div>
+         <div class="p-3 rounded-lg" style="background: #ffe4e6;">
+          <div class="text-2xl font-bold" style="color: #881337;">
+           95
+          </div>
+          <div class="text-xs" style="color: #64748b;">
+           Điểm tích lũy
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Results Section -->
+   <section id="results" class="py-20 px-6" style="background: white;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4" style="color: #1e293b;">Kết quả mong đợi</h2>
+      <p class="text-xl" style="color: #64748b;">Những thay đổi tích cực sau khi sử dụng FOCUSLY</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="stat-card">
+       <div class="text-6xl font-bold mb-4" style="color: #667eea;">
+        -30%
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Giảm thời gian</h3>
+       <p style="color: #64748b;">Giảm 20-40% thời gian dùng app gây nghiện sau 1-3 tháng sử dụng đều đặn</p>
+       <div class="mt-6">
+        <div class="flex justify-between text-sm mb-2"><span style="color: #64748b;">Trước</span> <span class="font-semibold" style="color: #ef4444;">6.5h/ngày</span>
+        </div>
+        <div class="h-3 rounded-full mb-3" style="background: #fee2e2;">
+         <div class="h-3 rounded-full" style="background: #ef4444; width: 100%;"></div>
+        </div>
+        <div class="flex justify-between text-sm mb-2"><span style="color: #64748b;">Sau</span> <span class="font-semibold" style="color: #10b981;">4.2h/ngày</span>
+        </div>
+        <div class="h-3 rounded-full" style="background: #d1fae5;">
+         <div class="h-3 rounded-full" style="background: #10b981; width: 65%;"></div>
+        </div>
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="text-6xl font-bold mb-4" style="color: #10b981;">
+        +45%
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Tăng năng suất</h3>
+       <p style="color: #64748b;">Tăng thời gian học tập tập trung và hoàn thành bài tập hiệu quả hơn</p>
+       <div class="mt-6 space-y-4">
+        <div>
+         <div class="flex items-center justify-between mb-2"><span class="text-sm" style="color: #64748b;">📚 Học tập</span> <span class="font-semibold text-sm" style="color: #10b981;">+2.5h</span>
+         </div>
+         <div class="h-2 rounded-full" style="background: #d1fae5;">
+          <div class="h-2 rounded-full" style="background: #10b981; width: 75%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex items-center justify-between mb-2"><span class="text-sm" style="color: #64748b;">🏃 Vận động</span> <span class="font-semibold text-sm" style="color: #10b981;">+1.2h</span>
+         </div>
+         <div class="h-2 rounded-full" style="background: #d1fae5;">
+          <div class="h-2 rounded-full" style="background: #10b981; width: 60%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex items-center justify-between mb-2"><span class="text-sm" style="color: #64748b;">💤 Ngủ sớm</span> <span class="font-semibold text-sm" style="color: #10b981;">+0.8h</span>
+         </div>
+         <div class="h-2 rounded-full" style="background: #d1fae5;">
+          <div class="h-2 rounded-full" style="background: #10b981; width: 50%;"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="text-6xl font-bold mb-4" style="color: #ff6b35;">
+        85%
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="color: #1e293b;">Sinh viên hài lòng</h3>
+       <p style="color: #64748b;">Cảm thấy tập trung hơn, giảm stress và cải thiện chất lượng cuộc sống</p>
+       <div class="mt-6 grid grid-cols-3 gap-3">
+        <div class="p-3 rounded-lg" style="background: #fef3c7;">
+         <div class="text-3xl mb-1">
+          😊
+         </div>
+         <div class="text-xs font-semibold" style="color: #92400e;">
+          Giảm stress
+         </div>
+        </div>
+        <div class="p-3 rounded-lg" style="background: #dbeafe;">
+         <div class="text-3xl mb-1">
+          🎯
+         </div>
+         <div class="text-xs font-semibold" style="color: #1e40af;">
+          Tập trung
+         </div>
+        </div>
+        <div class="p-3 rounded-lg" style="background: #d1fae5;">
+         <div class="text-3xl mb-1">
+          💪
+         </div>
+         <div class="text-xs font-semibold" style="color: #065f46;">
+          Năng động
+         </div>
+        </div>
+        <div class="p-3 rounded-lg" style="background: #ffe4e6;">
+         <div class="text-3xl mb-1">
+          😴
+         </div>
+         <div class="text-xs font-semibold" style="color: #881337;">
+          Ngủ ngon
+         </div>
+        </div>
+        <div class="p-3 rounded-lg" style="background: #f3e8ff;">
+         <div class="text-3xl mb-1">
+          👥
+         </div>
+         <div class="text-xs font-semibold" style="color: #6b21a8;">
+          Xã hội
+         </div>
+        </div>
+        <div class="p-3 rounded-lg" style="background: #fef3c7;">
+         <div class="text-3xl mb-1">
+          📈
+         </div>
+         <div class="text-xs font-semibold" style="color: #92400e;">
+          Điểm cao
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Testimonials Section -->
+   <section id="testimonials" class="py-20 px-6" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4" style="color: #1e293b;">Sinh viên nói gì về FOCUSLY</h2>
+      <p class="text-xl" style="color: #64748b;">Những câu chuyện thật từ người dùng</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="testimonial-card">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl" style="background: #dbeafe;">
+         👨‍🎓
+        </div>
+        <div>
+         <h4 class="font-bold" style="color: #1e293b;">Minh Tuấn</h4>
+         <p class="text-sm" style="color: #64748b;">SV Khoa CNTT, HUTECH</p>
+        </div>
+       </div>
+       <p class="mb-4" style="color: #475569;">"Từ khi dùng FOCUSLY, mình bớt lướt TikTok ban đêm và ngủ sớm hơn. Sáng hôm sau tỉnh táo, học tập hi���u quả hơn nhiều!"</p>
+       <div class="flex gap-1"><span style="color: #fbbf24;">⭐⭐⭐⭐⭐</span>
+       </div>
+      </div>
+      <div class="testimonial-card">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl" style="background: #fef3c7;">
+         👩‍🎓
+        </div>
+        <div>
+         <h4 class="font-bold" style="color: #1e293b;">Phương Anh</h4>
+         <p class="text-sm" style="color: #64748b;">SV Kinh tế, UEH</p>
+        </div>
+       </div>
+       <p class="mb-4" style="color: #475569;">"App giúp mình kiểm soát được thời gian lướt Facebook. Giờ có nhiều thời gian làm bài tập nhóm và đi chơi với bạn bè hơn."</p>
+       <div class="flex gap-1"><span style="color: #fbbf24;">⭐⭐⭐⭐⭐</span>
+       </div>
+      </div>
+      <div class="testimonial-card">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl" style="background: #d1fae5;">
+         👨‍🎓
+        </div>
+        <div>
+         <h4 class="font-bold" style="color: #1e293b;">Hoàng Nam</h4>
+         <p class="text-sm" style="color: #64748b;">SV Thiết kế, RMIT</p>
+        </div>
+       </div>
+       <p class="mb-4" style="color: #475569;">"Chế độ Focus Mode cực hay! Mình bật lên khi làm đồ án là tập trung 100%, không bị phân tâm bởi notification nữa."</p>
+       <div class="flex gap-1"><span style="color: #fbbf24;">⭐⭐⭐⭐⭐</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Download CTA Section -->
+   <section id="download" class="py-20 px-6" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-5xl font-bold text-white mb-6">Sẵn sàng thay đổi thói quen?</h2>
+     <p class="text-xl text-white mb-10 opacity-90">Tải FOCUSLY ngay hôm nay và bắt đầu hành trình kiểm soát thời gian sử dụng điện thoại của bạn</p>
+     <div class="flex flex-wrap gap-4 justify-center mb-10"><a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="app-store-btn text-white" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+       <svg width="32" height="32" viewbox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+       </svg>
+       <div class="text-left">
+        <div class="text-xs opacity-80">
+         Tải trên
+        </div>
+        <div class="text-lg font-bold">
+         Google Play
+        </div>
+       </div></a> <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="app-store-btn text-white" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+       <svg width="32" height="32" viewbox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+       </svg>
+       <div class="text-left">
+        <div class="text-xs opacity-80">
+         Tải trên
+        </div>
+        <div class="text-lg font-bold">
+         App Store
+        </div>
+       </div></a>
+     </div>
+     <div class="flex items-center justify-center gap-4 text-white text-sm">
+      <div class="flex items-center gap-2">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+       </svg><span>4.8/5 đánh giá</span>
+      </div><span class="opacity-50">•</span>
+      <div>
+       10,000+ lượt tải
+      </div><span class="opacity-50">•</span>
+      <div>
+       Miễn phí 100%
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-6" style="background: #1e293b;">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+       <div class="flex items-center gap-3 mb-4">
+        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#667eea" /> <rect x="12" y="8" width="16" height="24" rx="2" fill="white" /> <rect x="18" y="14" width="4" height="2" rx="1" fill="#667eea" /> <rect x="18" y="18" width="4" height="2" rx="1" fill="#667eea" />
+        </svg><span class="text-xl font-bold text-white">FOCUSLY</span>
+       </div>
+       <p id="footer-slogan" class="text-white opacity-75 mb-4">��t lướt hơn, sống nhiều hơn.</p>
+       <div class="flex gap-3"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,255,255,0.1);">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="white"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+         </svg></a> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,255,255,0.1);">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="white"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+         </svg></a> <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,255,255,0.1);">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="white"><path d="M16.6,5.82C15.9,5.17 15.4,4.31 15.23,3.35H12.5V15.53C12.5,16.85 11.41,17.94 10.09,17.94C8.77,17.94 7.68,16.85 7.68,15.53C7.68,14.21 8.77,13.12 10.09,13.12C10.36,13.12 10.62,13.17 10.86,13.26V10.5C10.61,10.46 10.35,10.44 10.09,10.44C7.26,10.44 5,12.7 5,15.53C5,18.36 7.26,20.62 10.09,20.62C12.92,20.62 15.18,18.36 15.18,15.53V9.5C16.36,10.33 17.75,10.82 19.23,10.82V8.14C18.07,8.14 17,7.63 16.6,5.82Z" />
+         </svg></a>
+       </div>
+      </div>
+      <div>
+       <h4 class="font-bold text-white mb-4">Sản phẩm</h4>
+       <ul class="space-y-2">
+        <li><a href="#features" class="text-white opacity-75 hover:opacity-100 transition-opacity">Tính năng</a></li>
+        <li><a href="#how-it-works" class="text-white opacity-75 hover:opacity-100 transition-opacity">Cách hoạt động</a></li>
+        <li><a href="#gallery" class="text-white opacity-75 hover:opacity-100 transition-opacity">Giao diện</a></li>
+        <li><a href="#download" class="text-white opacity-75 hover:opacity-100 transition-opacity">Tải ứng dụng</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="font-bold text-white mb-4">Hỗ trợ</h4>
+       <ul class="space-y-2">
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Trung tâm trợ giúp</a></li>
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Câu hỏi thường gặp</a></li>
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Liên hệ</a></li>
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Báo lỗi</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="font-bold text-white mb-4">Pháp lý</h4>
+       <ul class="space-y-2">
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Điều khoản sử dụng</a></li>
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Chính sách bảo mật</a></li>
+        <li><a href="#" class="text-white opacity-75 hover:opacity-100 transition-opacity">Cookie</a></li>
+       </ul>
+      </div>
+     </div>
+     <div class="border-t pt-8 text-center text-white opacity-75" style="border-color: rgba(255,255,255,0.1);">
+      <p>© 2024 FOCUSLY. Đặc biệt dành cho sinh viên TP. Hồ Chí Minh.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      logo_text: "FOCUSLY",
+      cta_button: "Tải FOCUSLY ngay",
+      hero_title: "Bớt lướt điện thoại, tập trung sống thật",
+      hero_subtitle: "FOCUSLY giúp sinh viên tự theo dõi – kiểm soát – giảm thời gian dùng smartphone.",
+      footer_slogan: "Ít lướt hơn, sống nhiều hơn.",
+      primary_color: "#667eea",
+      accent_color: "#ff6b35",
+      background_color: "#ffffff",
+      text_color: "#1e293b",
+      secondary_color: "#10b981"
+    };
+
+    async function onConfigChange(config) {
+      const logoElement = document.getElementById('logo-text');
+      const ctaElement = document.getElementById('header-cta');
+      const heroTitleElement = document.getElementById('hero-title');
+      const heroSubtitleElement = document.getElementById('hero-subtitle');
+      const footerSloganElement = document.getElementById('footer-slogan');
+
+      if (logoElement) logoElement.textContent = config.logo_text || defaultConfig.logo_text;
+      if (ctaElement) ctaElement.textContent = config.cta_button || defaultConfig.cta_button;
+      if (heroTitleElement) heroTitleElement.textContent = config.hero_title || defaultConfig.hero_title;
+      if (heroSubtitleElement) heroSubtitleElement.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      if (footerSloganElement) footerSloganElement.textContent = config.footer_slogan || defaultConfig.footer_slogan;
+
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+
+      if (logoElement) logoElement.style.color = primaryColor;
+      if (ctaElement) ctaElement.style.background = accentColor;
+      
+      document.documentElement.style.setProperty('--primary-color', primaryColor);
+      document.documentElement.style.setProperty('--accent-color', accentColor);
+      document.documentElement.style.setProperty('--bg-color', bgColor);
+      document.documentElement.style.setProperty('--text-color', textColor);
+      document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["logo_text", config.logo_text || defaultConfig.logo_text],
+        ["cta_button", config.cta_button || defaultConfig.cta_button],
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+        ["footer_slogan", config.footer_slogan || defaultConfig.footer_slogan]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aaa613217b02739',t:'MTc2NTE3NzE2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
